@@ -49,11 +49,15 @@
 
   <!--  CUERPO DEL DOCUMENTO  -->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 <!-- Site wrapper -->
-<div class="wrapper">
 
   <?php 
+
+      if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+
+      echo '<div class="wrapper">';
+
 
       /*=============================================
            =            CABEZOTE           =
@@ -99,11 +103,14 @@
 
       include "modulos/footer.php";
 
-   ?>
+      echo '</div>';
+    } else {
 
-  
-</div>
-<!-- ./wrapper -->
+        include "modulos/login.php";
+
+    }
+
+   ?>
 
 <script type="text/javascript" src="vistas/js/plantilla.js"></script>
 
