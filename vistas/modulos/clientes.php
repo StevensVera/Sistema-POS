@@ -47,4 +47,5 @@
       <!-- /.box -->
 
     </section>
-    <!-- /.content -->lientes
+    <!-- /.content -->
+  </div>
