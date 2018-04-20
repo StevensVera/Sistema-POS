@@ -1,3 +1,9 @@
+<?php  
+  
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +60,7 @@
 
   <?php 
 
-      if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+      if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ASF!241DFFQS"){
 
       echo '<div class="wrapper">';
 
