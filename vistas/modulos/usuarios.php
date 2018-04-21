@@ -34,7 +34,7 @@
 
         <div class="box-body">
         
-          <table class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped dt-responsive tablas">
               
               <thead>
                 <tr>
@@ -69,6 +69,25 @@
                       </div>
                     </td>
                   </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Usuario Administrador</td>
+                    <td>admin</td>
+                    <td><img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="40px"></td>
+                    <td>Administrador</td>
+                    <td><button class="btn btn-success btn-xs">Activado</button></td>
+                    <td>20-12-11 12:05:32</td>
+                    <td>
+                      <div class="btn-group">
+
+                        <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+
+                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                        
+                      </div>
+                    </td>
+                  </tr>
+
 
               </tbody>  
           
@@ -194,11 +213,9 @@
             
           </div>
 
-          
         </div>
         
       </div>
-        
       <!--*=============================================
       =            PIE DEL MODAL           =
       =============================================*/-->

@@ -3,42 +3,46 @@
 <!--*=============================================
 	           		lOGOTIPO
 	============================================= -->
-
-	<a href="inicio"  class="logo"> 
+	<a href="inicio" class="logo">
 		
-		<!-- Logo mini -->
+		<!-- logo mini -->
 		<span class="logo-mini">
 			
-				<img src="vistas/img/plantilla/icono-blanco.png" class="img-responsive" style="padding:10px"> 
+			<img src="vistas/img/plantilla/icono-blanco.png" class="img-responsive" style="padding:10px">
 
 		</span>
 
-		<!-- Logo normal -->
+		<!-- logo normal -->
 
 		<span class="logo-lg">
 			
-				<img src="vistas/img/plantilla/logo-blanco-lineal.png" class="img-responsive" style="padding:10px 0px"> 
+			<img src="vistas/img/plantilla/logo-blanco-lineal.png" class="img-responsive" style="padding:10px 0px">
+
 		</span>
+
 	</a>
+	
 
 	<!--*=============================================
 	           	BARRA DE NAVEGACION
 	============================================= -->
 
-	<nav class="navbar navbar-static-top" role="navegation">
+	<nav class="navbar navbar-static-top" role="navigation">
 		
-		<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+		<!-- Botón de navegación -->
 
-			<span class="sr-only">Toggle navigation</span>
-			
-		</a>
+	 	<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        	
+        	<span class="sr-only">Toggle navigation</span>
+      	
+      	</a>
 
-		<!--====  Pefil de usuario  ====-->
+		<!-- perfil de usuario -->
 
-	<div class="navbar-custom-menu">
-			
+		<div class="navbar-custom-menu">
+				
 			<ul class="nav navbar-nav">
-
+				
 				<li class="dropdown user user-menu">
 					
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -49,24 +53,24 @@
 
 					</a>
 
-			<!--====  DROPDOWN TOGGLE  ====-->
+					<!-- Dropdown-toggle -->
 
 					<ul class="dropdown-menu">
+						
+						<li class="user-body">
 							
-							<li class="user-body">
+							<div class="pull-right">
 								
+								<a href="salir" class="btn btn-default btn-flat">Salir</a>
 
-								<div class="pull-right">
+							</div>
 
-									<a href="salir" class="btn btn-default btn-flat">Salir</a>
-									
-								</div>
-								
-							</li>
+						</li>
+
 					</ul>
 
 				</li>
-				
+
 			</ul>
 
 		</div>
