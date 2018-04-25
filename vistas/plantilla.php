@@ -64,6 +64,8 @@
 
 <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
 
+<script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+
 
 
   <!--  CUERPO DEL DOCUMENTO  -->
@@ -73,7 +75,7 @@
 
   <?php 
 
-      if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ASF!241DFFQS"){
+      if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
 
       echo '<div class="wrapper">';
 
