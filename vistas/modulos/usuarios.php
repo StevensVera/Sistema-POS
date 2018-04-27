@@ -113,7 +113,7 @@
     <div class="modal-content">
 
       
-      <form role="form" method="post" enctype="multipart/form-darta">
+      <form role="form" method="post" enctype="multipart/form-data">
       <!--*=============================================
       =            CABEZA DEL MODAL           =
       =============================================*/-->
@@ -205,11 +205,11 @@
 
             <div class="panel">SUBIR FOTO</div>
 
-            <input type="file"  id="nuevaFoto" name="nuevaFoto">
+            <input type="file"  class="nuevaFoto" name="nuevaFoto">
 
-            <p class="help-block">Peso maximo de la foto 200 MB</p>
+            <p class="help-block">Peso maximo de la foto 2 MB</p>
 
-            <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="100px">
+            <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
             
           </div>
 
