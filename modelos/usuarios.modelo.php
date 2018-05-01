@@ -8,13 +8,30 @@ class ModeloUsuarios{
 
 	static public function MdlMostrarUsuarios($tabla,$item,$valor){
 
-		$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+		if($item != null){
 
-		$statement -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-		$statement -> execute();
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-		return $statement -> fetch();
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+
+		} else{
+
+			$statement = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+			$statement -> execute();
+
+			return $statement -> fetchAll();
+
+
+
+		}
+
+				
 
 		$statement -> close();
 
@@ -27,6 +44,7 @@ class ModeloUsuarios{
 
 
 	static public function mdlIngresarUsuario($tabla, $datos){
+
 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, perfil, foto) VALUES (:nombre, :usuario, :password, :perfil, :foto)");
 
@@ -51,6 +69,35 @@ class ModeloUsuarios{
 		$stmt = null;
 
 
+
+	}
+
+	/* Registro de Usuarios */
+
+	static public function mdlEditarUsuario($tabla, $datos){
+
+		$statement = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, password = :password, perfil = :perfil, foto = :foto WHERE usuario = :usuario");
+
+		$statement -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$statement -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
+		$statement -> bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
+		$statement -> bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
+		$statement -> bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+
+
+		if($statement->execute()){
+
+			return "ok";	
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$statement->close();
+		
+		$statement = null;
 
 	}
 	
