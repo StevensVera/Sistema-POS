@@ -32,11 +32,35 @@ class ControladorUsuarios{
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["perfil"] = $respuesta["perfil"];
 
-					echo '<script>
+					/* REGISTRAR FECHA PARA SABER EL ULTIMO */
+
+					date_default_timezone_get('America/Mazatlan');
+
+					$fecha = date('Y-m-d');
+					$hora = date("H:i:s");
+					$fechaActual = $fecha.' '.$hora;
+
+					$item1 = "ultimaConexion";
+					$valor1 = $fechaActual;
+
+					$item2 = "id";
+					$valor2 = $respuesta["id"];
+
+					$ultimologin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+
+
+					if($ultimologin == "ok") {
+					
+
+						echo '<script>
 						
 								window.location = "inicio";
 
 						</script>';
+
+					}
+
+					
 
 					}else{
 
@@ -294,7 +318,7 @@ class ControladorUsuarios{
 
 						$aleatorio = mt_rand(100,999);
 
-						$ruta = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".png";
+						$ruta = "vistas/img/usuarios/".$_POST["editarUsuario"]."/".$aleatorio.".png";
 
 						$origen = imagecreatefrompng($_FILES["editarFoto"]["tmp_name"]);						
 
@@ -343,7 +367,7 @@ class ControladorUsuarios{
 					}
 				}else{
 
-					$encriptar = $passwordActual;
+					$encriptar = $_POST["passwordActual"];
 
 				}
 
@@ -412,6 +436,55 @@ class ControladorUsuarios{
 
 
 	 }
+
+	 /*=============================================
+		 BORRAR USUARIO
+	  =============================================*/
+
+static public function ctrBorrarUsuario(){
+
+	if ( isset( $_GET["idUsuario"])) {
+		
+		$tabla = "usuarios";
+		$datos = $_GET["idUsuario"];
+
+		if ($_GET["fotoUsuario"] != "") {
+			
+			unlink($_GET["fotoUsuario"]);
+			rmdir('vistas/img/usuarios/'.$_GET["usuario"]);
+		}
+
+		$respuesta = ModeloUsuarios::mdlBorrarUsuario($tabla, $datos);
+
+		if ($respuesta = "ok") {
+
+			echo '<script>
+
+			swal({
+				type:"success",
+				title: "El usuario ha sido borrardo correctamente",
+				showConfirmButton:true,
+				confirmButtonText: "Cerrar",
+				closeOnConfirm:false
+			}).then((result) =>{
+
+						if(result.value){
+						
+							window.location = "usuarios";
+
+						}
+
+					});
+	
+			</script>';
+			
+		}
+
+
+	}
+}
+
+
 
 }
 

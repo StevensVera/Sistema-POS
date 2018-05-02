@@ -48,8 +48,8 @@ $(".nuevaFoto").change(function() {
 
 })
 
-
-$(".btnEditarUsuario").click(function(){
+/* Editar Usuario */
+$(".tablas").on("click",".btnEditarUsuario",function(){
 
   var idUsuario = $(this).attr("idUsuario");
 
@@ -88,7 +88,7 @@ $(".btnEditarUsuario").click(function(){
 })
 
 /* Activar Usuario */
-$(".btnActivar").click(function(){
+$(".tablas").on("click",".btnActivar",function(){
 
 
   var idUsuario = $(this).attr("idUsuario");
@@ -129,5 +129,78 @@ $(".btnActivar").click(function(){
     $(this).attr("estadoUsuario",0);
 
   }
+
+})
+
+/* Revisar si el Usuario ya esta Registrado */
+
+$("#nuevoUsuario").change(function(){
+
+  $(".alert").remove();
+
+  var usuario = $(this).val();
+
+  var datos = new FormData();
+
+  datos.append("validarUsuario", usuario);
+
+  $.ajax({
+
+    url:"ajax/usuarios.ajax.php",
+    method: "POST",
+    data: datos,
+    cache: false,
+    contentType:false,
+    processData: false,
+    dataType: "json",
+    success:function(respuesta){
+ 
+       if (respuesta) {
+
+        /*Vericar esta linea de codigo... Posible a usar en otras cosas*/
+
+         $("#nuevoUsuario").parent().after('<div class="alert alert-warning">Este usuario ya existe en el Sistema</div>');
+
+         $("#nuevoUsuario").val("");
+
+       }
+    
+    }
+
+
+  })
+
+})
+
+/* Eliminar Usuarios*/
+
+$(".tablas").on("click",".btnEliminarUsuario",function(){
+
+var idUsuario = $(this).attr("idUsuario");
+
+var fotoUsuario = $(this).attr("fotoUsuario");
+
+var usuario = $(this).attr("usuario");
+
+  swal({
+
+    title: '¿Esta seguro de borrar el usuario?',
+    text: "¡Si no lo esta puede cancelar la accion",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText:'Cancelar',
+    confirmButtonText:'Si, borrar Usuario!'
+
+  }).then((result)=>{
+
+  if(result.value){
+
+      window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario+"&usuario="+usuario+"&fotoUsuario="+fotoUsuario;
+
+    }
+
+  })
 
 })
