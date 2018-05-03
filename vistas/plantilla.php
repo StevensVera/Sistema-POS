@@ -136,6 +136,7 @@
 
 <script type="text/javascript" src="vistas/js/plantilla.js"></script>
 <script type="text/javascript" src="vistas/js/usuario.js"></script>
+<script type="text/javascript" src="vistas/js/categorias.js"></script>
 
 </body>
 </html>
