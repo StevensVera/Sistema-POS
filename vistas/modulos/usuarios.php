@@ -34,7 +34,7 @@
 
         <div class="box-body">
         
-          <table class="table table-bordered table-striped dt-responsive tablas">
+          <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
               
               <thead>
                 <tr>
@@ -112,6 +112,7 @@
           </table>
 
         </div>
+        
 
       </div>
 
@@ -125,7 +126,7 @@
 
 <div id="modalAgregarUsuario" class="modal fade" role="dialog">
 
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
 
     <!-- Modal content-->
     <div class="modal-content">

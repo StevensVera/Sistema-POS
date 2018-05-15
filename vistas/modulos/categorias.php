@@ -34,14 +34,14 @@
 
         <div class="box-body">
         
-          <table class="table table-bordered table-striped dt-responsive tablas">
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
               
               <thead>
                 <tr>
 
                   <th style="width: 10px">#</th>
                   <th>Categoria</th>
-                  <th style="width: 5px">Acciones</th>
+                  <th>Acciones</th>
 
                 </tr>
               </thead>

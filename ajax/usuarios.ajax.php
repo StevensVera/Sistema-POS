@@ -46,7 +46,7 @@ class AjaxUsuarios{
 
 	public $validarUsuario;
 
-	static public function ajaxValidarUsuario(){
+	 public function ajaxValidarUsuario(){
 
 		$item = "usuario";
 		$valor = $this->validarUsuario;
